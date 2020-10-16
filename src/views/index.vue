@@ -8,7 +8,7 @@
           <div class="d-flex jc-center">
             <dv-decoration-8 :color="['#568aea', '#000000']" style="width:2.5rem;height:.625rem;" />
             <div class="title">
-              <span class="title-text">大数据可视化平台</span>
+              <span class="title-text">江苏地震局可视化平台</span>
               <dv-decoration-6
                 class="title-bototm"
                 :reverse="true"
@@ -62,9 +62,7 @@
               </dv-border-box-12>
             </div>
             <div>
-              <dv-border-box-12>
-                <centerLeft2 />
-              </dv-border-box-12>
+              <centerLeft2 />
             </div>
             <!-- 中间 -->
             <div>

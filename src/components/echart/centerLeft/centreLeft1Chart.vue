@@ -47,25 +47,22 @@ export default {
           icon: "circle",
           bottom: 0,
           x: "center",
-          data: ["rose1", "rose2", "rose3", "rose4", "rose5", "rose6"],
+          data: ["前兆", "测震", "电源"],
           textStyle: {
             color: "#fff"
           }
         },
         series: [
           {
-            name: "增值电信业务统计表",
+            name: "设备统计",
             type: "pie",
             radius: [10, 60],
             roseType: "area",
             center: ["50%", "40%"],
             data: [
-              { value: 10, name: "rose1" },
-              { value: 5, name: "rose2" },
-              { value: 15, name: "rose3" },
-              { value: 25, name: "rose4" },
-              { value: 20, name: "rose5" },
-              { value: 35, name: "rose6" }
+              { value: 720, name: "前兆" },
+              { value: 500, name: "测震" },
+              { value: 460, name: "电源" },
             ]
           }
         ]

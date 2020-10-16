@@ -10,14 +10,14 @@
       <div class="d-flex jc-center body-box" style=" margin-top: 0;">
         <dv-capsule-chart :config="config" style="width: 100%;height:2rem" />
         <!-- ---------------------------------------- -->
-        <centreRight2Chart1 />
+<!--        <centreRight2Chart1 />-->
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import centreRight2Chart1 from "@/components/echart/centerRight/centerRight2Chart";
+// import centreRight2Chart1 from "@/components/echart/centerRight/centerRight2Chart";
 
 export default {
   data() {
@@ -29,7 +29,7 @@ export default {
             value: 167
           },
           {
-            name: "周口",
+            name: "地震测量",
             value: 67
           },
           {
@@ -40,7 +40,7 @@ export default {
       }
     };
   },
-  components: { centreRight2Chart1 },
+  // components: { centreRight2Chart1 },
   mounted() {},
   methods: {}
 };

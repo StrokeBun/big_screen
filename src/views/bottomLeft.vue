@@ -6,7 +6,7 @@
           <icon name="chart-bar"></icon>
         </span>
         <div class="d-flex">
-          <span class="fs-xl text mx-2">各市告警数据统计</span>
+          <span class="fs-xl text mx-2">各市告警数据实时统计</span>
         </div>
       </div>
       <div>

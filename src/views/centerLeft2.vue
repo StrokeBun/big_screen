@@ -1,30 +1,81 @@
 <template>
-  <div id="centreLeft1">
+  <div id="centreLeft2">
     <div class="bg-color-black">
       <div class="d-flex pt-2 pl-2">
         <span style="color:#5cd9e8">
-          <icon name="chart-pie"></icon>
+          <icon name="align-left"></icon>
         </span>
-        <div class="d-flex">
-          <span class="fs-xl text mx-2">数据情况雷达图</span>
-          <dv-decoration-1 style="width:1.25rem;height:.25rem; position:relative;top:-.0375rem;" />
-        </div>
+        <span class="fs-xl text mx-2">各市设备数目统计</span>
       </div>
-      <div class="d-flex jc-center">
-        <CentreLeft2Chart />
+      <div class="d-flex jc-center body-box" style=" margin-top: 0;">
+        <dv-capsule-chart :config="config" style="width: 100%;height:5rem" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import CentreLeft2Chart from "@/components/echart/centerLeft/centreLeft2Chart";
+
 export default {
   data() {
-    return {};
-  },
-  components: {
-    CentreLeft2Chart
+    return {
+      config: {
+        data: [
+          {
+            name: "南京",
+            value: 167
+          },
+          {
+            name: "镇江",
+            value: 67
+          },
+          {
+            name: "扬州",
+            value: 30
+          },
+          {
+            name: "泰州",
+            value: 25
+          },
+          {
+            name: "南通",
+            value: 60
+          },
+          {
+            name: "常州",
+            value: 76
+          },
+          {
+            name: "无锡",
+            value: 69
+          },
+          {
+            name: "苏州",
+            value: 110
+          },
+          {
+            name: "盐城",
+            value: 220
+          },
+          {
+            name: "淮安",
+            value: 23
+          },
+          {
+            name: "宿迁",
+            value: 45
+          },
+          {
+            name: "徐州",
+            value: 60
+          },
+          {
+            name: "连云港",
+            value: 77
+          }
+        ]
+      }
+    };
   },
   mounted() {},
   methods: {}
@@ -32,25 +83,22 @@ export default {
 </script>
 
 <style lang="scss">
-#centreLeft1 {
-  padding: 0.2rem;
-  height: 5.125rem;
+#centreRight2 {
+  padding: 0.0625rem;
+  height: 5rem;
   min-width: 3.75rem;
   border-radius: 0.0625rem;
   .bg-color-black {
-    height: 4.8125rem;
+    padding: 0.0625rem;
+    height: 5.0625rem;
     border-radius: 0.125rem;
   }
   .text {
     color: #c3cbde;
   }
-  .chart-box {
-    margin-top: 0.2rem;
-    width: 2.125rem;
-    height: 2.125rem;
-    .active-ring-name {
-      padding-top: 0.125rem;
-    }
+  .body-box {
+    border-radius: 0.125rem;
+    overflow: hidden;
   }
 }
 </style>

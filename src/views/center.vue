@@ -9,39 +9,39 @@
       </div>
     </div>
     <div class="down">
-      <div class="ranking bg-color-black">
+      <div class="ranking bg-color-black" style="width: 100%">
         <span style="color:#5cd9e8">
           <icon name="align-left"></icon>
         </span>
-        <span class="fs-xl text mx-2 mb-1">年度负责人组件达标榜</span>
-        <dv-scroll-ranking-board :config="ranking" style="height:2.75rem" />
+        <span class="fs-xl text mx-2 mb-1">各市设备入库年度统计</span>
+        <dv-scroll-ranking-board :config="ranking" style="width:100%;height:2.75rem" />
       </div>
-      <div class="percent">
-        <div class="item bg-color-black">
-          <span>今日任务通过率</span>
-          <CenterChart :id="rate[0].id" :tips="rate[0].tips" :colorObj="rate[0].colorData" />
-        </div>
-        <div class="item bg-color-black">
-          <span>今日任务达标率</span>
-          <CenterChart :id="rate[1].id" :tips="rate[1].tips" :colorObj="rate[1].colorData" />
-        </div>
-        <div class="water">
-          <dv-water-level-pond :config="water" style="height: 1.5rem" />
-        </div>
-      </div>
+<!--      <div class="percent">-->
+<!--        <div class="item bg-color-black">-->
+<!--          <span>今日任务通过率</span>-->
+<!--          <CenterChart :id="rate[0].id" :tips="rate[0].tips" :colorObj="rate[0].colorData" />-->
+<!--        </div>-->
+<!--        <div class="item bg-color-black">-->
+<!--          <span>今日任务达标率</span>-->
+<!--          <CenterChart :id="rate[1].id" :tips="rate[1].tips" :colorObj="rate[1].colorData" />-->
+<!--        </div>-->
+<!--        <div class="water">-->
+<!--          <dv-water-level-pond :config="water" style="height: 1.5rem" />-->
+<!--        </div>-->
+<!--      </div>-->
     </div>
   </div>
 </template>
 
 <script>
-import CenterChart from "@/components/echart/center/centerChartRate";
+// import CenterChart from "@/components/echart/center/centerChartRate";
 
 export default {
   data () {
     return {
       titleItem: [
         {
-          title: "今年累计任务建次数",
+          title: "今年设备入库数",
           number: {
             number: [120],
             toFixed: 1,
@@ -49,7 +49,7 @@ export default {
           }
         },
         {
-          title: "本月累计任务次数",
+          title: "本月设备入库数",
           number: {
             number: [18],
             toFixed: 1,
@@ -57,7 +57,7 @@ export default {
           }
         },
         {
-          title: "今日累计任务次数",
+          title: "今日设备入库数",
           number: {
             number: [2],
             toFixed: 1,
@@ -65,15 +65,7 @@ export default {
           }
         },
         {
-          title: "今年失败任务次数",
-          number: {
-            number: [14],
-            toFixed: 1,
-            content: "{nt}"
-          }
-        },
-        {
-          title: "今年成功任务次数",
+          title: "今年设备出库数",
           number: {
             number: [106],
             toFixed: 1,
@@ -81,9 +73,17 @@ export default {
           }
         },
         {
-          title: "今年达标任务个数",
+          title: "本月设备出库数",
           number: {
-            number: [100],
+            number: [14],
+            toFixed: 1,
+            content: "{nt}"
+          }
+        },
+        {
+          title: "今日设备出库数",
+          number: {
+            number: [2],
             toFixed: 1,
             content: "{nt}"
           }
@@ -92,48 +92,60 @@ export default {
       ranking: {
         data: [
           {
-            name: "周口",
-            value: 55
+            name: "南京",
+            value: 167
           },
           {
-            name: "南阳",
-            value: 120
+            name: "镇江",
+            value: 67
           },
           {
-            name: "西峡",
-            value: 78
+            name: "扬州",
+            value: 30
           },
           {
-            name: "驻马店",
-            value: 66
+            name: "泰州",
+            value: 25
           },
           {
-            name: "新乡",
-            value: 80
+            name: "南通",
+            value: 60
           },
           {
-            name: "新乡2",
-            value: 80
+            name: "常州",
+            value: 76
           },
           {
-            name: "新乡3",
-            value: 80
+            name: "无锡",
+            value: 69
           },
           {
-            name: "新乡4",
-            value: 80
+            name: "苏州",
+            value: 110
           },
           {
-            name: "新乡5",
-            value: 80
+            name: "盐城",
+            value: 220
           },
           {
-            name: "新乡6",
-            value: 80
+            name: "淮安",
+            value: 23
           },
+          {
+            name: "宿迁",
+            value: 45
+          },
+          {
+            name: "徐州",
+            value: 60
+          },
+          {
+            name: "连云港",
+            value: 77
+          }
         ],
         carousel: "single",
-        unit: "人"
+        unit: ""
       },
       water: {
         data: [24, 45],
@@ -175,7 +187,7 @@ export default {
     };
   },
   components: {
-    CenterChart
+    // CenterChart
     // centerChart1,
     // centerChart2
   }
