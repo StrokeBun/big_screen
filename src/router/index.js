@@ -6,8 +6,13 @@ Vue.use(VueRouter)
 const routes = [{
   path: '/',
   name: 'index',
-  component: () => import('../views/index.vue')
-}]
+  component: () => import('../views/index.vue')},
+  {
+    path: '/yc',
+    name: 'indexYc',
+    component: () => import('../views/indexYc.vue')
+  },
+]
 const router = new VueRouter({
   mode: "history",
   routes
