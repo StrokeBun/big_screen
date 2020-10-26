@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import BottomLeftChart from "_c/echart/bottom/bottomLeftChart";
+import BottomLeftChart from "_c/echart/js/bottom/bottomLeftChart";
 export default {
   data() {
     return {};

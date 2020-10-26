@@ -61,9 +61,6 @@
                 <centerLeft1 />
               </dv-border-box-12>
             </div>
-            <div>
-              <centerLeft2 />
-            </div>
             <!-- 中间 -->
             <div>
               <center />
@@ -82,7 +79,7 @@
           <!-- 第四行数据 -->
           <div class="bototm-box">
             <dv-border-box-13>
-              <bottomLeft />
+              <bottomLeft style="width: 6rem"/>
             </dv-border-box-13>
             <dv-border-box-12>
               <bottomRight />
@@ -97,7 +94,6 @@
 <script>
 import { formatTime } from '../utils'
 import centerLeft1 from "./yc/centerLeft1Yc";
-import centerLeft2 from "./yc/centerLeft2Yc";
 import centerRight1 from "./yc/centerRight1Yc";
 import centerRight2 from "./yc/centerRight2Yc";
 import center from "./yc/centerYc";
@@ -115,7 +111,7 @@ export default {
   },
   components: {
     centerLeft1,
-    centerLeft2,
+    // centerLeft2,
     centerRight1,
     centerRight2,
     center,

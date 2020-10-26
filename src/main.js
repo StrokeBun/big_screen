@@ -5,6 +5,12 @@ import store from './store';
 import dataV from '@jiaminghi/data-view';
 Vue.use(dataV);
 
+import BaiduMap from 'vue-baidu-map';
+Vue.use(BaiduMap, {
+  // 官方密钥
+  ak: 'EVg8nZaCT8T517wHQgLBUgEP0iXTd7QW'
+})
+
 // 按需引入vue-awesome图标
 import Icon from 'vue-awesome/components/Icon';
 import 'vue-awesome/icons/chart-bar.js';

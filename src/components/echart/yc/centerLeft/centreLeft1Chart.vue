@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="centreLeft1Chart" style="width:3.25rem; height: 2.75rem;"></div>
+    <div id="centreLeft1Chart" style="width:6rem; height: 5rem;"></div>
   </div>
 </template>
 
@@ -23,50 +23,102 @@ export default {
       this.chart = this.$echarts.init(document.getElementById("centreLeft1Chart"));
       //  ----------------------------------------------------------------
 
-      this.chart.setOption({
-        color: [
-          "#37a2da",
-          "#32c5e9",
-          "#9fe6b8",
-          "#ffdb5c",
-          "#ff9f7f",
-          "#fb7293",
-          "#e7bcf3",
-          "#8378ea"
-        ],
-        tooltip: {
-          trigger: "item",
-          formatter: "{a} <br/>{b} : {c} ({d}%)"
-        },
-        toolbox: {
-          show: true
-        },
-        calculable: true,
-        legend: {
-          orient: "horizontal",
-          icon: "circle",
-          bottom: 0,
+      let category = [
+        "一般警报",
+        "重要警报",
+        "严重警报"
+      ];
+      let lineData = [
+        15,
+        20,
+        31
+      ];
+      let option = {
+        title: {
+          text: "",
           x: "center",
-          data: ["前兆", "测震", "电源"],
+          y: 0,
           textStyle: {
-            color: "#fff"
+            color: "#B4B4B4",
+            fontSize: 16,
+            fontWeight: "normal"
           }
         },
+        tooltip: {
+          trigger: "axis",
+          backgroundColor: "rgba(255,255,255,0.1)",
+          axisPointer: {
+            type: "shadow",
+            label: {
+              show: true,
+              backgroundColor: "#7B7DDC"
+            }
+          }
+        },
+        grid: {
+          x: "8%",
+          width: "88%",
+          y: "4%"
+        },
+        xAxis: {
+          data: category,
+          axisLine: {
+            lineStyle: {
+              color: "#B4B4B4"
+            }
+          },
+          axisTick: {
+            show: false
+          }
+        },
+        yAxis: [
+          {
+            splitLine: { show: false },
+            axisLine: {
+              lineStyle: {
+                color: "#B4B4B4"
+              }
+            },
+
+            axisLabel: {
+              formatter: "{value} "
+            }
+          },
+          {
+            splitLine: { show: false },
+            axisLine: {
+              lineStyle: {
+                color: "#B4B4B4"
+              }
+            },
+            axisLabel: {
+              formatter: "{value} "
+            }
+          }
+        ],
         series: [
           {
-            name: "设备统计",
-            type: "pie",
-            radius: [10, 60],
-            roseType: "area",
-            center: ["50%", "40%"],
-            data: [
-              { value: 720, name: "前兆" },
-              { value: 500, name: "测震" },
-              { value: 460, name: "电源" },
-            ]
+            name: "告警数",
+            type: "bar",
+            barGap: "-100%",
+            barWidth: 50,
+            itemStyle: {
+              normal: {
+                barBorderRadius: 5,
+                color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                  { offset: 0, color: "rgba(156,107,211,0.8)" },
+                  { offset: 0.2, color: "rgba(156,107,211,0.5)" },
+                  { offset: 1, color: "rgba(156,107,211,0.2)" }
+                ])
+              }
+            },
+            z: -12,
+
+            data: lineData
           }
         ]
-      });
+      };
+      this.chart.setOption(option);
     }
   },
   destroyed() {

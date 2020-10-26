@@ -15,7 +15,6 @@ export default {
   },
   mounted() {
     this.draw();
-    // this.charTimg();
   },
   mixins: [echartMixins],
   methods: {
@@ -39,7 +38,7 @@ export default {
       let weekLineData = [];
 
       // 周数据
-      for (let i = 0; i < 7; i++) {
+      for (let i = 0; i < 30; i++) {
         // 日期
         var date = new Date((dottedBase -= 1000 * 3600 * 24));
         weekCategory.unshift([date.getMonth() + 1, date.getDate()].join("/"));

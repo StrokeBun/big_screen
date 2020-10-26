@@ -6,114 +6,30 @@
           <icon name="chart-bar"></icon>
         </span>
         <div class="d-flex">
-          <span class="fs-xl text mx-2">设备统计</span>
+          <span class="fs-xl text mx-2">告警统计</span>
           <dv-decoration-3 style="width:1.25rem;height:.25rem; position:relative;top:-.0375rem;" />
         </div>
       </div>
       <div class="d-flex jc-center">
         <CentreLeft1Chart />
       </div>
-      <!-- 4个主要的数据 -->
-      <div class="bottom-data">
-        <div class="item-box" v-for="(item,index) in numberData" :key="index">
-          <div class="d-flex">
-            <span class="coin"></span>
-            <dv-digital-flop :config="item.number" style="width:2.5rem;height:.625rem;" />
-          </div>
-          <p class="text" style="text-align: center;">
-            {{item.text}}
-            <span class="colorYellow"></span>
-          </p>
-        </div>
-      </div>
     </div>
   </div>
 </template>
 
 <script>
-import CentreLeft1Chart from "@/components/echart/centerLeft/centreLeft1Chart";
+import CentreLeft1Chart from "@/components/echart/yc/centerLeft/centreLeft1Chart";
 export default {
   data() {
     return {
-      config: {
-        lineWidth: 30,
-        activeRadius: "80%",
-        radius: "75%",
-        activeTimeGap: 2000,
-        // data: [
-        //   {
-        //     name: "周口",
-        //     value: 55
-        //   },
-        //   {
-        //     name: "南阳",
-        //     value: 120
-        //   },
-        //   {
-        //     name: "西峡",
-        //     value: 78
-        //   },
-        //   {
-        //     name: "驻马店",
-        //     value: 66
-        //   },
-        //   {
-        //     name: "新乡",
-        //     value: 80
-        //   }
-        // ]
-      },
-      numberData: [
-        {
-          number: {
-            number: [1600],
-            content: "{nt}"
-          },
-          text: "正常使用数量"
-        },
-        {
-          number: {
-            number: [1680],
-            // toFixed: 1,
-            content: "{nt}"
-          },
-          text: "总计数量"
-        },
-        {
-          number: {
-            number: [40],
-            content: "{nt}"
-          },
-          text: "报废数量"
-        },
-        {
-          number: {
-            number: [40],
-            content: "{nt}"
-          },
-          text: "维修数量"
-        }
-      ]
     };
   },
   components: {
     CentreLeft1Chart
   },
   mounted() {
-    this.changeTiming();
   },
   methods: {
-    changeTiming() {
-      setInterval(() => {
-        // this.changeNumber();
-      }, 3000);
-    },
-    changeNumber() {
-      this.numberData.forEach((item, index) => {
-        item.number.number[0] += ++index;
-        item.number = { ...item.number };
-      });
-    }
   }
 };
 </script>

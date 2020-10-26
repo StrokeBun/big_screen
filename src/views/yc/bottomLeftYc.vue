@@ -6,7 +6,7 @@
           <icon name="chart-bar"></icon>
         </span>
         <div class="d-flex">
-          <span class="fs-xl text mx-2">各市告警数据实时统计</span>
+          <span class="fs-xl text mx-2">报警台站信息</span>
         </div>
       </div>
       <div>
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import BottomLeftChart from "@/components/echart/bottom/bottomLeftChart";
+import BottomLeftChart from "_c/echart/yc/bottom/bottomLeftChart";
 export default {
   data() {
     return {};
