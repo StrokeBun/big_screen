@@ -62,7 +62,6 @@ export default {
       position: relative;
       width: 50%;
       color: #d3d6dd;
-      // 金币
       .coin {
         position: absolute;
         left: 0.1rem;

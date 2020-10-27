@@ -6,11 +6,16 @@
           <icon name="chart-line"></icon>
         </span>
         <div class="d-flex">
-          <span class="fs-xl text mx-2">台站报警情况</span>
+          <span class="fs-xl text mx-2">今日台站报警情况</span>
         </div>
       </div>
       <div class="d-flex jc-center body-box">
-        <dv-scroll-board :config="config" style="width:4rem;height:4.28rem" />
+        <dv-capsule-chart :config="alarm" style="width: 100%;height:1.8rem" />
+        <dv-capsule-chart :config="solve" style="width: 100%;height:1.8rem" />
+        <div class="d-flex" style="margin-top: 0.1rem; margin-bottom: 0.1rem">
+          <span class="fs-xl text mx-2" style="text-align: center">处理进度</span>
+        </div>
+        <dv-percent-pond :config="config" style="width:2rem;height:1rem;left: 30%" />
       </div>
     </div>
   </div>
@@ -20,25 +25,40 @@
 export default {
   data() {
     return {
-      config: {
-        header: ["台站", "原因", "是否处理"],
+      alarm: {
         data: [
-          ["台站1", "台站环境", "<span  class='colorGrass'>是</span>"],
-          ["台站2", "台站环境", "<span  class='colorRed'>否</span>"],
-          ["台站3", "地震测量", "<span  class='colorGrass'>是</span>"],
-          ["台站4", "地震测量", "<span  class='colorGrass'>是</span>"],
-          ["台站5", "网络错误", "<span  class='colorGrass'>否</span>"],
-          ["台站6", "网络错误", "<span  class='colorGrass'>是</span>"],
-          ["台站7", "网络错误", "<span  class='colorGrass'>是</span>"]
-        ],
-        rowNum: 7, //表格行数
-        headerHeight: 35,
-        headerBGC: "#0f1325", //表头
-        oddRowBGC: "#0f1325", //奇数行
-        evenRowBGC: "#171c33", //偶数行
-        index: true,
-        columnWidth: [50],
-        align: ["center"]
+          {
+            name: "台站环境",
+            value: 167
+          },
+          {
+            name: "地震测量",
+            value: 67
+          },
+          {
+            name: "网络故障",
+            value: 123
+          }
+        ]
+      },
+      solve: {
+        data: [
+          {
+            name: "警报数量",
+            value: 300
+          },
+          {
+            name: "已解决",
+            value: 240
+          },
+          {
+            name: "未处理",
+            value: 60
+          }
+        ]
+      },
+      config: {
+        value: 80
       }
     };
   },
@@ -51,11 +71,11 @@ export default {
 <style lang="scss">
 #centreRight1 {
   padding: 0.2rem;
-  height: 5.125rem;
-  min-width: 3.75rem;
+  height: 6rem;
+  width: 6.6rem;
   border-radius: 0.0625rem;
   .bg-color-black {
-    height: 4.8125rem;
+    height: 5.7rem;
     border-radius: 0.125rem;
   }
   .text {
