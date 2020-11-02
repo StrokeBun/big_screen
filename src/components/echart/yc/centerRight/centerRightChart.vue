@@ -12,14 +12,14 @@ export default {
   data() {
     return {
       alertMonthStatisticsByType: [
-        { value: 1, name: '台站环境' },
-        { value: 2, name: '地震测量' },
-        { value: 3, name: '网络错误' }
+        { value: 257, name: '台站环境' },
+        { value: 390, name: '地震测量' },
+        { value: 620, name: '网络错误' }
       ],
       alertMonthStatisticsByLevel: [
-        { name: '一般警报', value: 1},
-        { name: '重要警报', value: 2},
-        { name: '严重警报', value: 3}
+        { name: '严重警报', value: 25},
+        { name: '一般警报', value: 520},
+        { name: '重要警报', value: 134}
       ]
     };
   },

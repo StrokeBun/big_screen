@@ -128,7 +128,7 @@ export default {
             fontSize: 24,
             fontWeight: "normal"
           },
-          subtext: year + "/" + weekCategory[6],
+          subtext: year + "/" + weekCategory[29],
           subtextStyle: {
             color: "#fff",
             fontSize: 16
